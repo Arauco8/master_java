@@ -4,7 +4,7 @@ public class Option {
 
     private String value;
     private String name;
-    private Boolean selected;
+    private boolean selected;
 
     public Option() {
     }
@@ -30,11 +30,11 @@ public class Option {
         this.name = name;
     }
 
-    public Boolean getSelected() {
+    public boolean getSelected() {
         return selected;
     }
 
-    public void setSelected(Boolean selected) {
+    public void setSelected(boolean selected) {
         this.selected = selected;
     }
 }

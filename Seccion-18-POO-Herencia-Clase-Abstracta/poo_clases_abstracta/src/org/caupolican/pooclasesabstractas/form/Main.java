@@ -6,6 +6,10 @@ import org.caupolican.pooclasesabstractas.form.elementos.SelectForm;
 import org.caupolican.pooclasesabstractas.form.elementos.TextAreaForm;
 import org.caupolican.pooclasesabstractas.form.elementos.select.Option;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -22,17 +26,38 @@ public class Main {
 
         SelectForm language = new SelectForm("language");
         Option java = new Option("1", "Java");
-        language.addOption(java);
-        language.addOption(new Option("2", "Python"));
-        language.addOption(new Option("3", "JavaScript"));
-        language.addOption(new Option("4", "TypeScript"));
-        language.addOption(new Option("5", "Goland"));
+        language.addOption(java)
+        .addOption(new Option("2", "Python"))
+        .addOption(new Option("3", "JavaScript"))
+        .addOption(new Option("4", "TypeScript"))
+        .addOption(new Option("5", "Goland"));
 
         username.setValue("john.doe");
         password.setValue("123456");
         email.setValue("johndoe@correo.com");
         edad.setValue("25");
+        telefono.setValue("12345678");
+        url.setValue("http://www.johndoe.com");
+        fecha.setValue("2021-09-01");
+        experience.setValue("... mas de 10 de experiencia en Java ...");
+        comments.setValue("... comentarios ...");
         java.setSelected(true);
+
+        List<ElementoForm> elementos = Arrays.asList(username,
+                password,
+                email,
+                edad,
+                telefono,
+                url,
+                fecha,
+                experience,
+                comments,
+                language);
+
+        elementos.forEach(elementoForm -> {
+            System.out.println(elementoForm.dibujarHtml());
+            System.out.println("<br>");
+        });
 
     }
 }
