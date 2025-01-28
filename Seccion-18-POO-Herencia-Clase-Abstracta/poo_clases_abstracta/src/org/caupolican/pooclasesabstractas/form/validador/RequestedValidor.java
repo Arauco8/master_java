@@ -2,7 +2,7 @@ package org.caupolican.pooclasesabstractas.form.validador;
 
 public class RequestedValidor extends Validator {
 
-    protected String message = "El campo es requerido";
+    protected String message = "El campo %s es requerido";
 
     @Override
     public void setMessage(String message) {

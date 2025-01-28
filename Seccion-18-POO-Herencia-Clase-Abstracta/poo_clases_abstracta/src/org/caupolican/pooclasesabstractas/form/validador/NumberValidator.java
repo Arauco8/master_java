@@ -2,7 +2,7 @@ package org.caupolican.pooclasesabstractas.form.validador;
 
 public class NumberValidator extends Validator {
 
-    protected String message = "El campo debe ser un número"; // importante que este definido como en la clase padre
+    protected String message = "El campo %s debe ser un número"; // importante que este definido como en la clase padre
 
     @Override
     public void setMessage(String message) {

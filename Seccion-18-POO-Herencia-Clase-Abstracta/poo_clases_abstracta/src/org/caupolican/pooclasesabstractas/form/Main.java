@@ -92,7 +92,7 @@ public class Main {
 
         elementos.forEach(elementoForm -> {
             if (!elementoForm.isValid()) {
-                elementoForm.getErrors().forEach(err -> System.out.println(elementoForm.getName() + ": " + err));
+                elementoForm.getErrors().forEach(System.out::println);
             }
         });
 

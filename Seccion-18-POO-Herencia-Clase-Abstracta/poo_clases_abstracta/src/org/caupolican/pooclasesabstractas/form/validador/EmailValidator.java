@@ -2,7 +2,7 @@ package org.caupolican.pooclasesabstractas.form.validador;
 
 public class EmailValidator extends Validator {
 
-    protected String message = "El formato de email es inválido";
+    protected String message = "El campo %s tiene un formato de correo inválido";
     private final static String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     
     @Override

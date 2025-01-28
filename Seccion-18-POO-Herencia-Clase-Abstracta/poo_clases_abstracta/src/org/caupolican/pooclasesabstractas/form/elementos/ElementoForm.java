@@ -1,5 +1,6 @@
 package org.caupolican.pooclasesabstractas.form.elementos;
 
+import org.caupolican.pooclasesabstractas.form.validador.LargeValidator;
 import org.caupolican.pooclasesabstractas.form.validador.Validator;
 
 import java.util.ArrayList;
@@ -36,15 +37,15 @@ abstract public class ElementoForm {
         this.value = value;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public boolean isValid() {
         this.errors.clear(); // Clear the errors list
         for (Validator validator : validators) {
             if (!validator.isValid(this.value)) {
-                this.errors.add(validator.getMessage());
+                if (validator instanceof LargeValidator) {
+                    this.errors.add(((LargeValidator) validator).getMessageFormat(name));
+                } else {
+                    this.errors.add(String.format(validator.getMessage(), name));
+                }
             }
         }
         return this.errors.isEmpty();
