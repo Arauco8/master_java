@@ -30,8 +30,16 @@ public class Main {
         .addOption(new Option("2", "Python"))
         .addOption(new Option("3", "JavaScript"))
         .addOption(new Option("4", "TypeScript"))
-        .addOption(new Option("5", "Goland"));
+        .addOption(new Option("5", "Goland").setSelected(true));
 
+        ElementoForm saludar = new ElementoForm("saludo") {
+            @Override
+            public String dibujarHtml() {
+                return "<input disabled name='" +this.name+ "' value=\"" +this.value+ "\">";
+            }
+        };
+
+        saludar.setValue("Hola que tal este campo esta deshabilitado");
         username.setValue("john.doe");
         password.setValue("123456");
         email.setValue("johndoe@correo.com");
@@ -41,7 +49,7 @@ public class Main {
         fecha.setValue("2021-09-01");
         experience.setValue("... mas de 10 de experiencia en Java ...");
         comments.setValue("... comentarios ...");
-        java.setSelected(true);
+        //java.setSelected(true);
 
         List<ElementoForm> elementos = Arrays.asList(username,
                 password,
@@ -52,7 +60,8 @@ public class Main {
                 fecha,
                 experience,
                 comments,
-                language);
+                language,
+                saludar);
 
         elementos.forEach(elementoForm -> {
             System.out.println(elementoForm.dibujarHtml());
