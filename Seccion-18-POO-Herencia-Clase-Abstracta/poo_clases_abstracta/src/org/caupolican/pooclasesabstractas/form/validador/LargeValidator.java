@@ -1,6 +1,8 @@
 package org.caupolican.pooclasesabstractas.form.validador;
 
-public class LargeValidator extends Validator {
+import org.caupolican.pooclasesabstractas.form.validador.message.IMessageFormateable;
+
+public class LargeValidator extends Validator implements IMessageFormateable {
 
     protected String message = "El campo %s debe tener minímo %d caracteres y máximo %d caracteres";
     private int min;
@@ -42,7 +44,12 @@ public class LargeValidator extends Validator {
         return length >= this.min && length <= this.max;
     }
 
-    public String getMessageFormat(String field) {
+    @Override
+    public String getMessageFormatted(String field) {
         return this.message = String.format(this.message, field, this.min, this.max);
     }
+
+    /*public String getMessageFormatted(String field) {
+        return this.message = String.format(this.message, field, this.min, this.max);
+    }*/
 }

@@ -2,6 +2,7 @@ package org.caupolican.pooclasesabstractas.form.elementos;
 
 import org.caupolican.pooclasesabstractas.form.validador.LargeValidator;
 import org.caupolican.pooclasesabstractas.form.validador.Validator;
+import org.caupolican.pooclasesabstractas.form.validador.message.IMessageFormateable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +42,8 @@ abstract public class ElementoForm {
         this.errors.clear(); // Clear the errors list
         for (Validator validator : validators) {
             if (!validator.isValid(this.value)) {
-                if (validator instanceof LargeValidator) {
-                    this.errors.add(((LargeValidator) validator).getMessageFormat(name));
+                if (validator instanceof IMessageFormateable) {//desacoplamos al usar la interfaz
+                    this.errors.add(((IMessageFormateable) validator).getMessageFormatted(name));
                 } else {
                     this.errors.add(String.format(validator.getMessage(), name));
                 }
