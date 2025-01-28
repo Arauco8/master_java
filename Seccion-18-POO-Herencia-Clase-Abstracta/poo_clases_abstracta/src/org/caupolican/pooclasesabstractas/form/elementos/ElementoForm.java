@@ -36,6 +36,10 @@ abstract public class ElementoForm {
         this.value = value;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean isValid() {
         this.errors.clear(); // Clear the errors list
         for (Validator validator : validators) {
