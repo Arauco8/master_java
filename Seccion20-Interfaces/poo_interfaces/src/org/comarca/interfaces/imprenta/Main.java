@@ -1,8 +1,6 @@
 package org.comarca.interfaces.imprenta;
 
-import org.comarca.interfaces.imprenta.modelo.Curriculum;
-import org.comarca.interfaces.imprenta.modelo.Hoja;
-import org.comarca.interfaces.imprenta.modelo.Informe;
+import org.comarca.interfaces.imprenta.modelo.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,13 +10,19 @@ public class Main {
                 .addExperiencia("Programador en Python")
                 .addExperiencia("Programador en C++");
 
+        Libro libro = new Libro("El Quijote", "Miguel de Cervantes", Genero.DRAMA);
+        libro.addPagina(new Pagina("En un lugar de la Mancha, de cuyo nombre no quiero acordarme"))
+            .addPagina(new Pagina("no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero"))
+            .addPagina(new Pagina("adarga antigua, rocín flaco y galgo corredor"));
+
         Informe informe = new Informe("Caupolican", "Colo Colo", "Informe de la reunión de ayer");
 
         imprimir(curriculum);
         imprimir(informe);
+        imprimir(libro);
     }
 
-    public static void imprimir(Hoja imprimible) {
+    public static void imprimir(Imprimible imprimible) {
         System.out.println(imprimible.imprimir());
     }
 }
