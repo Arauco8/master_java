@@ -1,6 +1,5 @@
 package org.caupolican.pooclasesabstractas.form.elementos;
 
-import org.caupolican.pooclasesabstractas.form.validador.LargeValidator;
 import org.caupolican.pooclasesabstractas.form.validador.Validator;
 import org.caupolican.pooclasesabstractas.form.validador.message.IMessageFormateable;
 

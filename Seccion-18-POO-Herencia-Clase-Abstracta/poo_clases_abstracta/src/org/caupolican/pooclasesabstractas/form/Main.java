@@ -62,7 +62,7 @@ public class Main {
         };
 
         saludar.setValue("Hola que tal este campo esta deshabilitado");
-        username.setValue("johndoe");
+        username.setValue("john.doe");
         password.setValue("123456");
         email.setValue("johndoe@correo.com");
         edad.setValue("25");
