@@ -2,10 +2,10 @@ package org.comarca.interfaces.imprenta.modelo;
 
 public class Informe extends Hoja implements Imprimible {
 
-    private String autor;
+    private Persona autor;
     private String revisor;
 
-    public Informe(String autor, String revisor, String contenido) {
+    public Informe(Persona autor, String revisor, String contenido) {
         super(contenido);
         this.autor = autor;
         this.revisor = revisor;
